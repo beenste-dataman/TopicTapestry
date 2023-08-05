@@ -16,7 +16,7 @@ TopicTapestry is a one stop bulk file handling shop. It sifts through your file 
 - 📊 Perform LDA analysis on file names.
 - 🗂️ Create a CSV flat file database for easy examination.
 - 🚀 Quick file retrieval based on topics of interest.
-- 🎨 Visualize topic distributions with an interactive HTML output.
+- 🎨 Visualize topic distributions with an interactive HTML dashboard output.
 
 ## Getting Started
 
@@ -39,21 +39,27 @@ python topic_tapestry.py
 
 - **Sort and Gather Files**
 
-Use the sort option to recursively sort files by filetype from your system. This copies them to a bulk target directory. The LDA script takes only a bulk directory as input, no subdirectories. So, this creates a clean bucket for the LDA script to run on. 
+Use the sort option to recursively sort files by filetype from your system. 
+
+This copies them to a bulk target directory. The LDA script takes only a bulk directory as input, no subdirectories. So, this creates a clean bucket for the LDA script to run on. 
 I use this script on massive datasets, and love it. It allows me to bucket unmanageable datasets into neat buckets. Then proceed to topic model them using LDA in steps 2-3. Analyze terabytes like they are putty in your hand. 
 
 
 - **Perform LDA Analysis**
 
-Upon running runner.py, select the option to perform LDA analysis.
-The script will guide you through the process.
+Upon running runner.py, select the option to perform LDA analysis. (This is not a recursive tool, use the sorting tool to make a bucket to feed it)
+The script will guide you through the process. If you used the sorting script feed it that bucket directory you created.
 
 
 - **Query prior Results**
 
 Opt to query an existing CSV file.
 Enter the topic words of interest.
-Access the relevant files directly through the tool.
+Access the relevant files directly through the tool. Quickly open and read related files. 
+
+- **Access The Interactive HTML Topic Modelling Output Dashboard**
+
+Choose the option for this and the dashboard will open in browser. 
 
 ---
 
