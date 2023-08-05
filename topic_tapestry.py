@@ -46,6 +46,7 @@ def main():
     check_requirements()
 
     while True:
+        print_ascii()
         print("\nChoose an option:")
         print("1: Run LDA Analysis")
         print("2: Query LDA Output Database")
