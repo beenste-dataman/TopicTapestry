@@ -3,7 +3,7 @@ import shutil
 import glob
 
 def sort_files():
-    print("\n📁 File Sorting Tool 📁\n")
+    print("\n📁 File Sorting Tool 📁\nSort a directory and the subdirectories by filetypes, and copy all to one bulk directory bucket.\nThis will be what you run the LDA tool on.\n")
     # Ask user for input
     source_dir = input("Please enter the directory to sort: ")
     file_types = input("Please enter a comma separated list of file types (e.g., txt,jpg,py): ")
