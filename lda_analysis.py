@@ -32,6 +32,22 @@ def get_num_topics():
         except ValueError:
             print("❌ Invalid input. Please enter a numeric value for the number of topics.")
 
+
+def train_lda_model(doc_term_matrix, num_topics, dictionary):
+    try:
+        # Attempting LdaMulticore
+        Lda = models.LdaMulticore
+        ldamodel = Lda(doc_term_matrix, num_topics=num_topics, id2word=dictionary, passes=50)
+        print("✅ Using multicore LDA...")
+    except Exception as e:
+        print(f"❌ Multicore LDA failed due to: {str(e)}")
+        print("⏳ Falling back to single core LDA...")
+        Lda = models.LdaModel
+        ldamodel = Lda(doc_term_matrix, num_topics=num_topics, id2word=dictionary, passes=50)
+    return ldamodel
+
+
+
 def main():
     dir_path = get_directory_path()
     num_topics = get_num_topics()
@@ -54,13 +70,17 @@ def main():
 
     dictionary = corpora.Dictionary(file_names_words)
     doc_term_matrix = [dictionary.doc2bow(name) for name in file_names_words]
-
-    Lda = models.LdaMulticore
-
+    
+    
+    
+    #training
     print("\n⏳ Running LDA analysis... (this may take some time)")
-    for _ in tqdm(range(50), desc="Training LDA model"):
-        ldamodel = Lda(doc_term_matrix, num_topics=num_topics, id2word=dictionary, passes=1)
+    ldamodel = train_lda_model(doc_term_matrix, num_topics, dictionary)
 
+
+    
+    
+    
     dominant_topics = [max(ldamodel[doc], key=lambda x: x[1])[0] for doc in doc_term_matrix]
     topic_words = {i: [word_prob[0] for word_prob in ldamodel.show_topic(i, topn=10)] for i in range(num_topics)}
 
