@@ -3,7 +3,9 @@
 # TopicTapestry 🧵
 A robust tool for analyzing and categorizing large datasets using Latent Dirichlet Allocation (LDA).
 
-![TopicTapestry Banner](path_to_banner_image_if_you_have_one.jpg)
+
+![image](https://github.com/beenste-dataman/TopicTapestry/assets/50429213/03385c7d-2248-4fbb-917f-b9dd83212a0a)
+
 
 ## Introduction
 
