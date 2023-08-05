@@ -9,11 +9,12 @@ A robust tool for analyzing and categorizing large datasets using Latent Dirichl
 
 ## Introduction
 
-TopicTapestry sifts through your file names and leverages LDA to categorize them into distinct topics. Whether you're diving into a fresh dataset or revisiting a previous one, TopicTapestry provides a one-stop solution to analyze and make sense of your data.
+TopicTapestry is a one stop bulk file handling shop. It sifts through your file names and leverages LDA to categorize them into distinct topics. Whether you're diving into a fresh dataset or revisiting a previous one, TopicTapestry provides a one-stop solution to analyze and make sense of your data.
 
 ## Features
+- 🗂️ Sort and gather files by type from your unsorted files. Neatly Pack into one directory.
 - 📊 Perform LDA analysis on file names.
-- 🗂️ Create a CSV output for easy examination.
+- 🗂️ Create a CSV flat file database for easy examination.
 - 🚀 Quick file retrieval based on topics of interest.
 - 🎨 Visualize topic distributions with an interactive HTML output.
 
@@ -35,6 +36,11 @@ python topic_tapestry.py
 ---
 
 ## Usage
+
+- **Sort and Gather Files**
+
+Use the sort option to recursively sort files by filetype from your system. This copies them to a bulk target directory. The LDA script takes only a bulk directory as input, no subdirectories. So, this creates a clean bucket for the LDA script to run on. 
+I use this script on massive datasets, and love it. It allows me to bucket unmanageable datasets into neat buckets. Then proceed to topic model them using LDA in steps 2-3. Analyze terabytes like they are putty in your hand. 
 
 
 - **Perform LDA Analysis**
