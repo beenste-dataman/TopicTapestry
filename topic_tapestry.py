@@ -48,8 +48,9 @@ def main():
     while True:
         print("\nChoose an option:")
         print("1: Run LDA Analysis")
-        print("2: Query CSV File")
-        print("3: Exit")
+        print("2: Query LDA Output Database")
+        print("3: Open Prior LDA Visualization")
+        print("4: Exit")
         
         choice = input("Enter your choice: ")
         
@@ -57,13 +58,16 @@ def main():
         current_directory = os.path.dirname(os.path.abspath(__file__))
         
         if choice == "1":
-            # Building path relative to current script's location
             lda_script_path = os.path.join(current_directory, "lda_analysis.py")
             os.system(f'python {lda_script_path}')
         elif choice == "2":
             csv_script_path = os.path.join(current_directory, "csv_query.py")
             os.system(f'python {csv_script_path}')
         elif choice == "3":
+            # Building path relative to current script's location for the lda.html file
+            lda_html_path = os.path.join(current_directory, "lda.html")
+            os.system(f'xdg-open "{lda_html_path}"')
+        elif choice == "4":
             break
         else:
             print("Invalid choice. Please try again.")
