@@ -22,8 +22,8 @@ TopicTapestry is a one stop bulk file handling shop. It sifts through your file 
 
 **Clone the Repository**
    ```bash
-   git clone https://github.com/beenste-dataman/TopicTapestry.git
-   sudo chmod -R 777 TopicTapestry  
+   git clone https://github.com/beenste-dataman/TopicTapestry.git &&
+   sudo chmod -R 777 TopicTapestry &&
    cd TopicTapestry
 ```
 
