@@ -2,3 +2,8 @@ pandas
 nltk
 gensim
 pyLDAvis
+transformers
+torch
+tqdm
+emoji
+
