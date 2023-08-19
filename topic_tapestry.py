@@ -2,6 +2,7 @@ import os
 import subprocess
 import time
 from sorting_files import sort_files
+from filename_translation import translate_filenames
 
 
 def check_requirements():
@@ -57,30 +58,37 @@ def main():
         print('-' * 55)
         print('-' * 55)
         print("\nChoose an option:")
-        print("1: Sort Files")  # New option added as the first choice
-        print("2: Run LDA Analysis")
-        print("3: Query LDA Output Database")
-        print("4: Open Prior LDA Visualization")
-        print("5: Exit")
+        print("1: Sort Files")
+        print("2: Translate Filenames")  # New option added
+        print("3: Run LDA Analysis")
+        print("4: Query LDA Output Database")
+        print("5: Open Prior LDA Visualization")
+        print("6: Exit")
         
         choice = input("Enter your choice: ")
         
         # Getting the directory in which this script resides
         current_directory = os.path.dirname(os.path.abspath(__file__))
         
-        if choice == "1":  # New option added
+        if choice == "1":
             sort_files()
-        elif choice == "2":
+        elif choice == "2":  # New option added
+            src_lang = input("Enter the source language (e.g., 'en'): ")
+            trg_lang = input("Enter the target language (e.g., 'es'): ")
+            source_directory = input("Enter the source directory path: ")
+            target_directory = input("Enter the target directory path: ")
+            translate_filenames(source_directory, target_directory, src_lang, trg_lang)
+        elif choice == "3":
             lda_script_path = os.path.join(current_directory, "lda_analysis.py")
             os.system(f'python {lda_script_path}')
-        elif choice == "3":
+        elif choice == "4":
             csv_script_path = os.path.join(current_directory, "csv_query.py")
             os.system(f'python {csv_script_path}')
-        elif choice == "4":
+        elif choice == "5":
             # Building path relative to current script's location for the lda.html file
             lda_html_path = os.path.join(current_directory, "lda.html")
             os.system(f'xdg-open "{lda_html_path}"')
-        elif choice == "5":
+        elif choice == "6":
             break
         else:
             print("Invalid choice. Please try again.")
