@@ -21,7 +21,7 @@ def check_requirements():
         requirements_path = os.path.join(current_directory, "requirements.txt")
         
         print("\n[INFO] Starting installation...\n")
-        subprocess.check_call(["pip", "install", "-r", requirements_path])
+        subprocess.check_call(["pip3", "install", "-r", requirements_path])
         
         print("\nInstallation completed. Please run the script again.")
         exit()
@@ -80,10 +80,10 @@ def main():
             translate_filenames(source_directory, target_directory, src_lang, trg_lang)
         elif choice == "3":
             lda_script_path = os.path.join(current_directory, "lda_analysis.py")
-            os.system(f'python {lda_script_path}')
+            os.system(f'python3 {lda_script_path}')
         elif choice == "4":
             csv_script_path = os.path.join(current_directory, "csv_query.py")
-            os.system(f'python {csv_script_path}')
+            os.system(f'python3 {csv_script_path}')
         elif choice == "5":
             # Building path relative to current script's location for the lda.html file
             lda_html_path = os.path.join(current_directory, "lda.html")
